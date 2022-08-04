@@ -1,4 +1,30 @@
-# admin:
-#   title: Administrator
-#   permissions:
-#     - super
+admin:
+  title: Admin
+  permissions:
+    - super
+editor:
+  title: Editor
+  permissions:
+    - 'access cp'
+    - 'view pages entries'
+    - 'edit pages entries'
+    - 'create pages entries'
+    - 'delete pages entries'
+    - 'publish pages entries'
+    - 'reorder pages entries'
+    - 'edit other authors pages entries'
+    - 'publish other authors pages entries'
+    - 'delete other authors pages entries'
+    - 'view event_groups entries'
+    - 'edit event_groups entries'
+    - 'create event_groups entries'
+    - 'delete event_groups entries'
+    - 'publish event_groups entries'
+    - 'reorder event_groups entries'
+    - 'edit other authors event_groups entries'
+    - 'publish other authors event_groups entries'
+    - 'delete other authors event_groups entries'
+    - 'view users'
+    - 'edit users'
+participant:
+  title: Participant

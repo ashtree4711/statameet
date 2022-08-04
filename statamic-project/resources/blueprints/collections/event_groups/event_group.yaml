@@ -1,0 +1,83 @@
+title: 'Event Group'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: date
+        field:
+          input_type: date
+          antlers: false
+          display: Date
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: time
+        field:
+          input_type: time
+          antlers: false
+          display: Time
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: location
+        field:
+          input_type: text
+          antlers: false
+          display: Location
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: conference_link
+        field:
+          input_type: url
+          antlers: false
+          display: 'Conference Link'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: moderation
+        field:
+          mode: default
+          display: Moderation
+          type: users
+          icon: users
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - event_groups
+          max_items: 1
+          listable: false
+          localizable: true

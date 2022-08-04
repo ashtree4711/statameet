@@ -1,4 +1,12 @@
-# admin:
-#   title: Administrators
-#   roles:
-#     - admin
+editors:
+  title: Editors
+  roles:
+    - editor
+admins:
+  title: Admins
+  roles:
+    - admin
+participants:
+  title: Participants
+  roles:
+    - participant
