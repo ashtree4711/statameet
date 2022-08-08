@@ -11,24 +11,40 @@ sections:
           validate:
             - required
       -
-        handle: date
+        handle: date_input
         field:
-          input_type: date
-          antlers: false
+          mode: single
+          time_enabled: false
+          time_seconds_enabled: false
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
           display: Date
-          type: text
-          icon: text
+          type: date
+          icon: date
           listable: hidden
           instructions_position: above
           visibility: visible
       -
-        handle: time
+        handle: starting_time
         field:
-          input_type: time
-          antlers: false
-          display: Time
-          type: text
-          icon: text
+          seconds_enabled: false
+          display: 'Starting Time'
+          type: time
+          icon: time
+          width: 50
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: ending_time
+        field:
+          seconds_enabled: false
+          display: 'Ending Time'
+          type: time
+          icon: time
+          width: 50
           listable: hidden
           instructions_position: above
           visibility: visible
@@ -72,6 +88,41 @@ sections:
         field:
           type: slug
           localizable: true
+      -
+        handle: template
+        field:
+          hide_partials: true
+          blueprint: false
+          folder: templates/event_groups
+          display: Template
+          type: template
+          icon: template
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: collections_field
+        field:
+          mode: default
+          display: 'Collections Field'
+          type: collections
+          icon: collections
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: entries_field
+        field:
+          mode: default
+          create: true
+          collections:
+            - event_groups
+          display: 'Entries Field'
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          visibility: visible
       -
         handle: parent
         field:

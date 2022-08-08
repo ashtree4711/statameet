@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+{{ partial:head }}
+<body>
+{{ partial:nav }}
+<div class="container-xl content-container content-container-sm" >
+    <div class="card shadow">
+        <div class="card-body">
+            {{ user:forgot_password_form reset_url="/reset-password" }}
+            <div class="form-floating mt-1">
+                <input id="emailinput" type="text" name="email" value="{{ old:email }}" class="form-control">
+                <label for="emailinput">E-Mail</label>
+            </div>
+            <div class="mt-1">
+                <button type="submit" class="btn btn-outline-primary w-100" >Reset</button>
+            </div>
+            {{ if errors }}
+            <div class="bg-red-300 text-white p-2">
+                {{ errors }}
+                {{ value }}<br>
+                {{ /errors }}
+            </div>
+            {{ /if }}
+
+            {{ if success }}
+            <div class="bg-green-300 text-white p-2">
+                {{ success }}<br>
+            </div>
+            {{ /if }}
+
+
+            {{ /user:forgot_password_form }}
+        </div>
+    </div>
+</div>
+{{ partial:scripts }}
+</body>
+</html>
+
+
+

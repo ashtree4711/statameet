@@ -1,0 +1,61 @@
+<h1>{{ title }}</h1>
+<h3><a href="{{ parent:url }}">{{ parent.title }} <small>({{ parent.date_input format="D, Y-m-d" }}, {{ parent:starting_time }}-{{ parent:ending_time }})</small></a></h3>
+<ul class="list-group list-group-flush mt-3">
+    <li class="list-group-item"><strong class="me-1">Speakers:</strong>
+        {{ speakers }}
+        {{ name }}{{ if last }}{{ else }}, {{ /if }}
+        {{ /speakers }}
+    </li>
+    <li class="list-group-item"><strong class="me-1">Language:</strong><span>{{ language }}</span></li>
+    <li class="list-group-item"><strong class="me-1">Abstract:</strong><span>{{ abstract }}</span></li>
+    <li class="list-group-item"><strong class="me-1">Location:</strong><span>{{ parent:location }}</span></li>
+    <li class="list-group-item"><strong class="me-1">Virtual Link:</strong>
+        {{ user:is role="admin|editor|participant" }}
+        {{ user }}
+        <a href="{{ parent:conference_link}}" target="_blank">Link</a>
+        {{ /user }}
+        {{ /user:is }}
+        {{ user:isnt role="admin|editor|participant" }}
+        <i>need to be logged in</i>
+        {{ /user:isnt  }}
+    </li>
+
+    <li class="list-group-item">
+        <div class="btn-group btn-group-sm">
+            {{ user:is role="admin|editor|participant" }}
+                {{ user }}
+                    {{ if abstract_file }}
+                        {{ abstract_file }}
+                            <a href="{{ url }}" class="btn btn-primary text-white" >Abstract</a>
+                        {{ /abstract_file }}
+                    {{ else }}
+                        <button type="button" class="btn btn-primary text-white" disabled>Absract</button>
+                    {{ /if }}
+
+                    {{ if presentation_file }}
+                        {{ presentation_file }}
+                            <a href="{{ url }}" class="btn btn-primary text-white">Presentation</a>
+                        {{ /presentation_file }}
+                    {{ else }}
+                        <button type="button" class="btn btn-primary text-white" disabled>Presentation</button>
+                    {{ /if }}
+
+                    {{ if handout_file }}
+                        {{ handout_file }}
+                            <a href="{{ url }}" class="btn btn-primary text-white">Handout</a>
+                        {{ /handout_file }}
+                    {{ else }}
+                        <button type="button" class="btn btn-primary text-white" disabled>Handout</button>
+                    {{ /if }}
+                {{ /user }}
+            {{ /user:is }}
+            {{ user:isnt role="admin|editor|participant" }}
+                <button type="button" class="btn btn-primary text-white" disabled>Absract</button>
+                <button type="button" class="btn btn-primary text-white" disabled>Presentation</button>
+                <button type="button" class="btn btn-primary text-white" disabled>Handout</button>
+            {{ /user:isnt  }}
+        </div>
+
+    </li>
+
+</ul>

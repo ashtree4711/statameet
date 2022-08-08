@@ -1,0 +1,34 @@
+<h1>{{ title }}</h1>
+<ul class="list-group list-group-flush mt-3">
+    <li class="list-group-item"><strong class="me-1">Moderation:</strong>
+        {{ moderation }}
+        {{ name }}
+        {{ /moderation }}
+    </li>
+    <li class="list-group-item"><strong class="me-1">Date:</strong><span>{{ date_input format="D, Y-m-d" }}</span></li>
+    <li class="list-group-item"><strong class="me-1">Time:</strong><span>{{ starting_time }} - {{ ending_time }}</span></li>
+    <li class="list-group-item"><strong class="me-1">Location:</strong><span>{{ location }}</span></li>
+    <li class="list-group-item"><strong class="me-1">Virtual Link:</strong>
+        {{ user:is role="admin|editor|participant" }}
+        {{ user }}
+        <a href="{{ conference_link}}" target="_blank">Link</a>
+        {{ /user }}
+        {{ /user:is }}
+        {{ user:isnt role="admin|editor|participant" }}
+        <i>need to be logged in</i>
+        {{ /user:isnt  }}
+    </li>
+
+</ul>
+<div class="card mt-5">
+    <div class="card-header">Events</div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            {{ entries_field }}
+            <a href="{{ url }}" class="list-group-item list-group-item-action">
+                {{ title }}
+            </a>
+            {{ /entries_field }}
+        </ul>
+    </div>
+</div>

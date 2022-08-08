@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\SiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::statamic('example', 'example-view', [
-//    'title' => 'Example'
-// ]);
+Route::get('login', [UserController::class, 'show_login'])->name('login');
+Route::get('signup', [UserController::class, 'show_signup'])->name('signup');
+Route::get('reset-pw', [UserController::class, 'show_reset_pw'])->name('reset_pw');
+Route::get('events', [SiteController::class, 'events']);
+

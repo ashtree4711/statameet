@@ -1,18 +1,60 @@
 title: Pages
 sections:
   main:
+    display: Main
     fields:
       -
         handle: title
         field:
           type: text
           required: true
+          validate:
+            - required
       -
         handle: content
         field:
-          type: markdown
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+            - h4
+            - h5
+            - h6
+            - underline
+            - strikethrough
+            - small
+            - superscript
+            - subscript
+            - code
+            - horizontalrule
+          container: assets
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
           display: Content
-          localizable: true
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          visibility: visible
       -
         handle: author
         field:
@@ -21,19 +63,26 @@ sections:
           default: current
           localizable: true
           max_items: 1
-      -
-        handle: template
-        field:
-          type: template
-          display: Template
-          localizable: true
   sidebar:
+    display: Sidebar
     fields:
       -
         handle: slug
         field:
           type: slug
           localizable: true
+      -
+        handle: template
+        field:
+          type: template
+          display: Template
+          localizable: true
+          instructions_position: above
+          listable: hidden
+          visibility: visible
+          hide_partials: true
+          blueprint: false
+          folder: templates/pages
       -
         handle: parent
         field:

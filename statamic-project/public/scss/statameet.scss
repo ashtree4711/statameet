@@ -1,0 +1,22 @@
+@import "functions";
+@import "variables";
+@import "maps";
+@import "mixins";
+@import "utilities";
+
+body {
+    background: linear-gradient(45deg,lighten($primary, 40),lighten($primary, 20),$primary)!important;
+    min-height: 100vh!important;
+}
+
+.btn-outline-primary:hover {
+    color: $gray-100!important;
+}
+
+.content-container {
+    margin-top: 80px!important;
+}
+
+.content-container-sm {
+    max-width: 400px!important;
+}

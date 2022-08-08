@@ -2,7 +2,7 @@ title: Events
 template: default
 layout: layout
 revisions: false
-route: '/events/{slug}'
+route: 'events/{{ slug }}'
 sort_dir: asc
 default_status: draft
 date_behavior:

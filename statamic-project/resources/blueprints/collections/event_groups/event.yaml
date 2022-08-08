@@ -11,6 +11,16 @@ sections:
           validate:
             - required
       -
+        handle: speakers
+        field:
+          mode: select
+          display: Speakers
+          type: users
+          icon: users
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
         handle: language
         field:
           input_type: text
@@ -36,7 +46,7 @@ sections:
         field:
           mode: list
           container: assets
-          restrict: false
+          restrict: true
           allow_uploads: true
           show_filename: true
           display: 'Abstract File'
@@ -45,12 +55,13 @@ sections:
           listable: hidden
           instructions_position: above
           visibility: visible
+          folder: uploads/abstracts
       -
         handle: presentation_file
         field:
           mode: list
           container: assets
-          restrict: false
+          restrict: true
           allow_uploads: true
           show_filename: true
           display: 'Presentation File'
@@ -59,20 +70,23 @@ sections:
           listable: hidden
           instructions_position: above
           visibility: visible
+          folder: uploads/presentations
       -
-        handle: haandout_file
+        handle: handout_file
         field:
           mode: list
           container: assets
-          restrict: false
+          restrict: true
           allow_uploads: true
           show_filename: true
-          display: 'Haandout File'
+          display: 'Handout File'
           type: assets
           icon: assets
           listable: hidden
           instructions_position: above
           visibility: visible
+          max_files: 1
+          folder: uploads/handouts
   sidebar:
     display: Sidebar
     fields:
@@ -94,3 +108,15 @@ sections:
           visibility: visible
           mode: select
           create: true
+      -
+        handle: template
+        field:
+          hide_partials: true
+          blueprint: false
+          display: Template
+          type: template
+          icon: template
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          folder: templates/events
