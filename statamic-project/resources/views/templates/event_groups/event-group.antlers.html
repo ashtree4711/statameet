@@ -1,34 +1,42 @@
 <h1>{{ title }}</h1>
 <ul class="list-group list-group-flush mt-3">
     <li class="list-group-item"><strong class="me-1">Moderation:</strong>
+        {{ if moderation }}
         {{ moderation }}
         {{ name }}
         {{ /moderation }}
+        {{ else }}
+        <i>not set yet</i>
+        {{ /if }}
     </li>
-    <li class="list-group-item"><strong class="me-1">Date:</strong><span>{{ date_input format="D, Y-m-d" }}</span></li>
-    <li class="list-group-item"><strong class="me-1">Time:</strong><span>{{ starting_time }} - {{ ending_time }}</span></li>
-    <li class="list-group-item"><strong class="me-1">Location:</strong><span>{{ location }}</span></li>
-    <li class="list-group-item"><strong class="me-1">Virtual Link:</strong>
+    <li class="list-group-item d-flex flex-row"><strong class="me-1">Date:</strong><span>{{ date_input format="D, Y-m-d" }}</span></li>
+    <li class="list-group-item d-flex flex-row"><strong class="me-1">Time:</strong><span>{{ starting_time }}{{ if ending_time }}-{{ ending_time }}{{ /if }}</span></li>
+    {{ if location }}
+    <li class="list-group-item d-flex flex-row"><strong class="me-1">Location:</strong><span>{{ location }}</span></li>
+    {{ /if }}
+    {{ if conference_link }}
+    <li class="list-group-item d-flex flex-row"><strong class="me-1">Virtual Link:</strong>
         {{ user:is role="admin|editor|participant" }}
         {{ user }}
-        <a href="{{ conference_link}}" target="_blank">Link</a>
+        <span>{{ conference_link}}</span>
         {{ /user }}
         {{ /user:is }}
         {{ user:isnt role="admin|editor|participant" }}
         <i>need to be logged in</i>
         {{ /user:isnt  }}
     </li>
-
+    {{ /if }}
+    {{ if !conference_link and !location}}
+    <li class="list-group-item d-flex flex-row"><i>location or conference link will be published soon</i></li>
+    {{ /if }}
 </ul>
-<div class="card mt-5">
-    <div class="card-header">Events</div>
-    <div class="card-body">
-        <ul class="list-group list-group-flush">
-            {{ entries_field }}
-            <a href="{{ url }}" class="list-group-item list-group-item-action">
-                {{ title }}
-            </a>
-            {{ /entries_field }}
-        </ul>
-    </div>
+<div class="py-3">
+    <strong>Lectures</strong>
+    <ul class="list-group list-group-flush border border-primary rounded-3">
+        {{ entries_field }}
+        <a href="{{ url }}" class="list-group-item list-group-item-action">
+            {{ title }}
+        </a>
+        {{ /entries_field }}
+    </ul>
 </div>

@@ -1,24 +1,49 @@
 <h1>{{ title }}</h1>
-<h3><a href="{{ parent:url }}">{{ parent.title }} <small>({{ parent.date_input format="D, Y-m-d" }}, {{ parent:starting_time }}-{{ parent:ending_time }})</small></a></h3>
+<h5><a href="{{ parent:url }}">{{ parent.title }} <small>({{ parent.date_input format="D, Y-m-d" }}, {{ parent:starting_time }}{{ if parent:ending_time }}-{{ parent:ending_time }}{{ /if }})</small></a></h5>
 <ul class="list-group list-group-flush mt-3">
     <li class="list-group-item"><strong class="me-1">Speakers:</strong>
+        {{ if speakers }}
         {{ speakers }}
         {{ name }}{{ if last }}{{ else }}, {{ /if }}
         {{ /speakers }}
+        {{ else }}
+        <i>not set yet</i>
+        {{ /if }}
     </li>
-    <li class="list-group-item"><strong class="me-1">Language:</strong><span>{{ language }}</span></li>
-    <li class="list-group-item"><strong class="me-1">Abstract:</strong><span>{{ abstract }}</span></li>
-    <li class="list-group-item"><strong class="me-1">Location:</strong><span>{{ parent:location }}</span></li>
-    <li class="list-group-item"><strong class="me-1">Virtual Link:</strong>
+    <li class="list-group-item d-flex flex-row"><strong class="me-1">Language:</strong>
+        <span>
+            {{ if language_item }}
+            {{ language_item }}{{ title }}{{ if last }}{{ else }}, {{ /if }}{{ /language_item }}
+            {{ else }}
+            <i>not set yet</i>
+            {{ /if }}
+        </span>
+    </li>
+    {{ if abstract }}
+    <li class="list-group-item d-flex flex-row"><strong class="me-1">Abstract:</strong>
+        <span>
+            {{ abstract }}
+        </span>
+    </li>
+    {{ /if }}
+    {{ if parent:location }}
+    <li class="list-group-item d-flex flex-row"><strong class="me-1">Location:</strong><span>{{ parent:location }}</span></li>
+    {{ /if }}
+    {{ if parent:conference_link }}
+    <li class="list-group-item d-flex flex-row"><strong class="me-1">Virtual Link:</strong>
         {{ user:is role="admin|editor|participant" }}
         {{ user }}
-        <a href="{{ parent:conference_link}}" target="_blank">Link</a>
+        <span>{{ parent:conference_link}}</span>
         {{ /user }}
         {{ /user:is }}
         {{ user:isnt role="admin|editor|participant" }}
         <i>need to be logged in</i>
         {{ /user:isnt  }}
     </li>
+    {{ /if }}
+    {{ if !parent:conference_link and !parent:location}}
+    <li class="list-group-item d-flex flex-row"><i>location or conference link will be published soon</i></li>
+    {{ /if }}
 
     <li class="list-group-item">
         <div class="btn-group btn-group-sm">
@@ -29,7 +54,7 @@
                             <a href="{{ url }}" class="btn btn-primary text-white" >Abstract</a>
                         {{ /abstract_file }}
                     {{ else }}
-                        <button type="button" class="btn btn-primary text-white" disabled>Absract</button>
+                        <button type="button" class="btn btn-primary text-white" disabled>Abstract</button>
                     {{ /if }}
 
                     {{ if presentation_file }}
@@ -50,7 +75,7 @@
                 {{ /user }}
             {{ /user:is }}
             {{ user:isnt role="admin|editor|participant" }}
-                <button type="button" class="btn btn-primary text-white" disabled>Absract</button>
+                <button type="button" class="btn btn-primary text-white" disabled>Abstract</button>
                 <button type="button" class="btn btn-primary text-white" disabled>Presentation</button>
                 <button type="button" class="btn btn-primary text-white" disabled>Handout</button>
             {{ /user:isnt  }}

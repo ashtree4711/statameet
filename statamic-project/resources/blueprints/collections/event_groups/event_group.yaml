@@ -8,8 +8,71 @@ sections:
         field:
           type: text
           required: true
+          input_type: text
+          antlers: false
+          display: Title
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
           validate:
             - required
+      -
+        handle: location
+        field:
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - bold
+            - italic
+            - anchor
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: false
+          display: Location
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          instructions: '*Physical* Location in the real world'
+      -
+        handle: conference_link
+        field:
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - bold
+            - italic
+            - anchor
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: true
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: false
+          display: 'Conference Link'
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          instructions: 'Direct Link to the meeting/conference like *Zoom*, *Teams*, *Bluebutton* and so on. Using hyperlink is recommended **Displayed only to registered users**.'
       -
         handle: date_input
         field:
@@ -26,6 +89,7 @@ sections:
           listable: hidden
           instructions_position: above
           visibility: visible
+          instructions: 'Date of this section. Easy.'
       -
         handle: starting_time
         field:
@@ -37,6 +101,8 @@ sections:
           listable: hidden
           instructions_position: above
           visibility: visible
+          instructions: 'When the events starts.'
+          default: '0:00'
       -
         handle: ending_time
         field:
@@ -48,28 +114,7 @@ sections:
           listable: hidden
           instructions_position: above
           visibility: visible
-      -
-        handle: location
-        field:
-          input_type: text
-          antlers: false
-          display: Location
-          type: text
-          icon: text
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-      -
-        handle: conference_link
-        field:
-          input_type: url
-          antlers: false
-          display: 'Conference Link'
-          type: text
-          icon: text
-          listable: hidden
-          instructions_position: above
-          visibility: visible
+          instructions: 'When the event ends'
       -
         handle: moderation
         field:
@@ -77,6 +122,19 @@ sections:
           display: Moderation
           type: users
           icon: users
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: event_type
+        field:
+          mode: default
+          create: true
+          taxonomies:
+            - event_types
+          display: 'Event Type'
+          type: terms
+          icon: taxonomy
           listable: hidden
           instructions_position: above
           visibility: visible
@@ -101,28 +159,19 @@ sections:
           instructions_position: above
           visibility: visible
       -
-        handle: collections_field
-        field:
-          mode: default
-          display: 'Collections Field'
-          type: collections
-          icon: collections
-          listable: hidden
-          instructions_position: above
-          visibility: visible
-      -
         handle: entries_field
         field:
           mode: default
           create: true
           collections:
             - event_groups
-          display: 'Entries Field'
+          display: Events
           type: entries
           icon: entries
           listable: hidden
           instructions_position: above
           visibility: visible
+          instructions: 'Choose all events in this event group.'
       -
         handle: parent
         field:

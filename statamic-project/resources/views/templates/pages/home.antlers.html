@@ -6,18 +6,24 @@
         <h3 class="text-center text-secondary" style="letter-spacing: 1rem!important;">{{ banner_title | upper}}</h3>
     {{ /if }}
 
-<div>
+<div class="py-3">
     {{ description }}
 </div>
-<div>
-    <ul class="list-group list-group-flush">
+<div class="py-3">
+    <ul class="list-group list-group-flush border border-primary rounded-3">
         {{ current_events }}
-        <a class="list-group-item list-group-item-action d-flex justify-content-between" href="{{ url }}">
-            <span class="">{{ title }}</span>
-            <span class="">{{ location }} | {{ date_input format="D, Y-m-d" }} | {{ starting_time }} - {{ ending_time }}</span>
+        <a class="list-group-item list-group-item-action d-flex flex-column" href="{{ url }}">
+            <span>{{ title }}</span>
+            <small class="d-flex flex-row">
+                {{ if location }}<span class="me-1">{{ location }}</span>{{ /if}}
+                <span>
+                    {{ if date_input or starting_time and location }}<span> | </span>{{ /if }}
+                    {{ if date_input }}<span >{{ date_input format="Y-m-d" }}</span>{{ /if }}
+                    {{ if date_input and starting_time }}<span>, </span>{{ /if }}
+                    {{ if starting_time }}<span class="me-1">{{ starting_time }}{{ if ending_time }}-{{ ending_time }}{{ /if }}</span>{{ /if }}
+                </span>
+            </small>
         </a>
-
-
         {{ /current_events }}
     </ul>
 

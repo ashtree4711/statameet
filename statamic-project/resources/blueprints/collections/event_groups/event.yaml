@@ -1,4 +1,4 @@
-title: Event
+title: Lecture
 sections:
   main:
     display: Main
@@ -21,13 +21,15 @@ sections:
           instructions_position: above
           visibility: visible
       -
-        handle: language
+        handle: language_item
         field:
-          input_type: text
-          antlers: false
+          mode: default
+          create: true
+          taxonomies:
+            - languages
           display: Language
-          type: text
-          icon: text
+          type: terms
+          icon: taxonomy
           listable: hidden
           instructions_position: above
           visibility: visible
@@ -119,4 +121,4 @@ sections:
           listable: hidden
           instructions_position: above
           visibility: visible
-          folder: templates/events
+          folder: templates/lectures

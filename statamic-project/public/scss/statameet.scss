@@ -9,6 +9,10 @@ body {
     min-height: 100vh!important;
 }
 
+hr {
+    border-top: 3px solid $primary;
+}
+
 .btn-outline-light:hover {
     color: $gray-100!important;
     background-color: $primary!important;
@@ -29,4 +33,7 @@ body {
 
 .nav-link {
     color: lightgrey!important;
+}
+.nav-link:hover {
+    color: $primary!important;
 }
