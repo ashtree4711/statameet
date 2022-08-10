@@ -1,4 +1,16 @@
 name: 'Mark Eschweiler'
 super: true
+first_name: Mark
+last_name: Eschweiler
+institution: 'Universität zu Köln'
+gender: male
+groups:
+  - admins
+roles:
+  - admin
 id: 3c80fd1a-30bb-46e0-b4f9-ecef0c748691
-password_hash: $2y$10$mUyjXa00WyZrO202g7xZ.u5xp5PFVewVck138uxoCd//hDmqydBrO
+password_hash: $2y$10$UyGpGrtphtsJslE7hRqQSOiDN80fa9ebG4M7UNb4kcplbTdIOuhMK
+preferences:
+  collections:
+    pages:
+      after_save: continue_editing

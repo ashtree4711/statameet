@@ -8,19 +8,31 @@
         <div class="card-body">
             {{ user:register_form }}
             <div class="form-floating mt-1">
-                <input id="email-field" type="email" aria-label="Email" class="form-control" name="email" value="{{ old:email }}">
+                <input id="email-field" type="email" aria-label="Email" class="form-control" name="email" value="{{ old:email }}" required>
                 <label for="email-field">E-Mail</label>
             </div>
             <div class="form-floating mt-1">
-                <input id="pw-field" type="password" aria-label="password" class="form-control" name="password" >
+                <input id="fn-field" type="text" aria-label="First Name" class="form-control" name="first_name" value="{{ old:first_name }}" required>
+                <label for="fn-field">First Name</label>
+            </div>
+            <div class="form-floating mt-1">
+                <input id="ln-field" type="text" aria-label="Last Name" class="form-control" name="last_name" value="{{ old:last_name }}" required>
+                <label for="ln-field">Last Name</label>
+            </div>
+            <div class="form-floating mt-1">
+                <input id="ins-field" type="text" aria-label="Institution" class="form-control" name="institution" value="{{ old:institution }}">
+                <label for="ins-field">Institution</label>
+            </div>
+            <div class="form-floating mt-1">
+                <input id="pw-field" type="password" aria-label="password" class="form-control" name="password" required>
                 <label for="pw-field">Password</label>
             </div>
             <div class="form-floating mt-1">
-                <input id="pwc-field" type="password" aria-label="password_c" class="form-control" name="password_confirmation" >
+                <input id="pwc-field" type="password" aria-label="password_c" class="form-control" name="password_confirmation" required>
                 <label for="pwc-field">Password Confirmation</label>
             </div>
             <div class="mt-1">
-                <button type="submit" class="btn btn-outline-primary w-100" >Signin</button>
+                <button type="submit" class="btn btn-outline-primary w-100" >Sign in</button>
             </div>
             <div class="mt-1">
                 {{ if errors }}
@@ -31,7 +43,7 @@
                 </div>
                 {{ /if }}
                 {{ if success }}
-                <div class="alert alert-success p-2">
+                <div class="alert alert-primary p-2">
                     {{ success }}<br>
                 </div>
                 {{ /if }}

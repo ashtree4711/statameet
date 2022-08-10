@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">statameet</a>
+        <a class="navbar-brand" href="/"><img src="{{ design:logo }}" height="30" width="auto"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -12,7 +12,7 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ title }}
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-dark">
                         {{ children }}
                         <li><a class="dropdown-item" href="{{ url }}">{{ title }}</a></li>
                         {{ /children }}
@@ -29,7 +29,9 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Events
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="/events">Overview</a></li>
+                        <li><hr class="dropdown-divider"></li>
                         {{ nav:events }}
                         <li><a class="dropdown-item" href="{{url}}">{{ title }}</a></li>
                         {{ /nav:events }}
@@ -40,16 +42,16 @@
             <div class="btn-group btn-group-sm">
                 {{ user:is role="admin|editor|participant" }}
                     {{ user }}
-                        <a href="#" class="btn btn-outline-dark">{{ name }}</a>
+                        <a href="#" class="btn btn-outline-light">{{ first_name }} {{ last_name }}</a>
                         {{ user:in group="admins|editors" }}
-                            <a href="/cp" class="btn btn-outline-dark">Control Panel</a>
+                            <a href="/cp" class="btn btn-outline-light">Control Panel</a>
                         {{ /user:in }}
-                        <a href="{{ user:logout_url }}" class="btn btn-outline-dark">Log out</a>
+                        <a href="{{ user:logout_url }}" class="btn btn-outline-light">Log out</a>
                     {{ /user }}
                 {{ /user:is }}
                 {{ user:isnt role="admin|editor|participant" }}
-                    <a href="/login" class="btn btn-outline-dark">Log in</a>
-                    <a href="/signup" class="btn btn-outline-dark">Sign up</a>
+                    <a href="/login" class="btn btn-outline-light">Log in</a>
+                    <a href="/signup" class="btn btn-outline-light">Sign up</a>
                 {{ /user:isnt  }}
             </div>
         </div>

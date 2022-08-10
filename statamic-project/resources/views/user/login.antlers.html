@@ -16,7 +16,7 @@
                 <label for="passwordfield">Password</label>
             </div>
             <div class="mt-1">
-                <button type="submit" class="btn btn-outline-primary w-100" >Signin</button>
+                <button type="submit" class="btn btn-outline-primary w-100" >Log in</button>
             </div>
             <div class="mt-1">
                 {{ if errors }}
@@ -27,12 +27,13 @@
                 </div>
                 {{ /if }}
                 {{ if success }}
-                <div class="alert alert-success p-2">
+                <div class="alert alert-primary p-2">
                     {{ success }}<br>
                 </div>
                 {{ /if }}
             </div>
             {{ /user:login_form }}
+
         </div>
     </div>
 </div>

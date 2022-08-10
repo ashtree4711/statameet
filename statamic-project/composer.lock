@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1fa5bb8ed2189fbdc58dbf74d47c1da4",
+    "content-hash": "1f29761dc897f0ab191f8e342fb39d7d",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -4409,16 +4409,16 @@
         },
         {
             "name": "statamic/cms",
-            "version": "v3.3.25",
+            "version": "v3.3.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/statamic/cms.git",
-                "reference": "e96ae88d41b03d8cec97a6dc368950e5152beea8"
+                "reference": "5f4d9b41e3db40e5525428f17ebfac6f54c4d9ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/statamic/cms/zipball/e96ae88d41b03d8cec97a6dc368950e5152beea8",
-                "reference": "e96ae88d41b03d8cec97a6dc368950e5152beea8",
+                "url": "https://api.github.com/repos/statamic/cms/zipball/5f4d9b41e3db40e5525428f17ebfac6f54c4d9ed",
+                "reference": "5f4d9b41e3db40e5525428f17ebfac6f54c4d9ed",
                 "shasum": ""
             },
             "require": {
@@ -4496,7 +4496,7 @@
             ],
             "support": {
                 "issues": "https://github.com/statamic/cms/issues",
-                "source": "https://github.com/statamic/cms/tree/v3.3.25"
+                "source": "https://github.com/statamic/cms/tree/v3.3.26"
             },
             "funding": [
                 {
@@ -4504,7 +4504,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-08-01T21:29:55+00:00"
+            "time": "2022-08-08T18:20:35+00:00"
         },
         {
             "name": "statamic/stringy",
@@ -10320,5 +10320,5 @@
         "php": "^7.4 || ^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }

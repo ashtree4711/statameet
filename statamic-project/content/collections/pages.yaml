@@ -1,8 +1,8 @@
 title: Pages
-template: default
+template: templates/pages/standard
 layout: layout
 revisions: false
-route: 'pages/{slug}'
+route: '{slug}'
 sort_dir: asc
 structure:
   root: true

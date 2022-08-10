@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-center">
+    {{ if design:icon }}
+        <img src="{{ design:icon }}" height="80" width="auto"></div>
+    {{ /if }}
+    {{ if banner_title  }}
+        <h3 class="text-center text-secondary" style="letter-spacing: 1rem!important;">{{ banner_title | upper}}</h3>
+    {{ /if }}
+
+<div>
+    {{ description }}
+</div>
+<div>
+    <ul class="list-group list-group-flush">
+        {{ current_events }}
+        <a class="list-group-item list-group-item-action d-flex justify-content-between" href="{{ url }}">
+            <span class="">{{ title }}</span>
+            <span class="">{{ location }} | {{ date_input format="D, Y-m-d" }} | {{ starting_time }} - {{ ending_time }}</span>
+        </a>
+
+
+        {{ /current_events }}
+    </ul>
+
+</div>

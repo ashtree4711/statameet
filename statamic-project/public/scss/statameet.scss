@@ -5,8 +5,14 @@
 @import "utilities";
 
 body {
-    background: linear-gradient(45deg,lighten($primary, 40),lighten($primary, 20),$primary)!important;
+    background: linear-gradient(45deg,darken($primary, 40),darken($primary, 20),$primary)!important;
     min-height: 100vh!important;
+}
+
+.btn-outline-light:hover {
+    color: $gray-100!important;
+    background-color: $primary!important;
+    border-color: $primary!important;
 }
 
 .btn-outline-primary:hover {
@@ -19,4 +25,8 @@ body {
 
 .content-container-sm {
     max-width: 400px!important;
+}
+
+.nav-link {
+    color: lightgrey!important;
 }
