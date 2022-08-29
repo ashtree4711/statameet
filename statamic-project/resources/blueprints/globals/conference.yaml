@@ -20,3 +20,14 @@ sections:
           listable: hidden
           instructions_position: above
           visibility: visible
+      -
+        handle: data_privacy
+        field:
+          collections:
+            - pages
+          display: 'Data Privacy'
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above
+          visibility: visible

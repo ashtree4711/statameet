@@ -16,12 +16,12 @@
     {{ /if }}
     {{ if conference_link }}
     <li class="list-group-item d-flex flex-row"><strong class="me-1">Virtual Link:</strong>
-        {{ user:is role="admin|editor|participant" }}
+        {{ user:is role="participant" }}
         {{ user }}
         <span>{{ conference_link}}</span>
         {{ /user }}
         {{ /user:is }}
-        {{ user:isnt role="admin|editor|participant" }}
+        {{ user:isnt role="participant" }}
         <i>need to be logged in</i>
         {{ /user:isnt  }}
     </li>
