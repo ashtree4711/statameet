@@ -17,6 +17,7 @@ use App\Http\Controllers\SiteController;
 
 Route::get('login', [UserController::class, 'show_login'])->name('login');
 Route::get('signup', [UserController::class, 'show_signup'])->name('signup');
-Route::get('reset-pw', [UserController::class, 'show_reset_pw'])->name('reset_pw');
+Route::get('forgot-password', [UserController::class, 'show_forgot_pw'])->name('forgot-pw');
+Route::get('reset-password', [UserController::class, 'show_reset_pw'])->name('reset-pw');
 Route::get('events', [SiteController::class, 'events']);
 

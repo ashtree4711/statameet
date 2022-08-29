@@ -29,12 +29,21 @@ class UserController extends BaseController
             ->with($data);
     }
 
+    public function show_forgot_pw(){
+        $data = [
+            'title' => 'Forgot Password',
+        ];
+        return (new View)
+            ->template('/user/forgot-password')
+            ->with($data);
+    }
+
     public function show_reset_pw(){
         $data = [
             'title' => 'Reset Password',
         ];
         return (new View)
-            ->template('/user/reset-pw')
+            ->template('/user/reset-password')
             ->with($data);
     }
 }
