@@ -1,3 +1,4 @@
 title: Events
 collections:
   - event_groups
+max_depth: 3

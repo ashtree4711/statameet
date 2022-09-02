@@ -1,5 +1,5 @@
 <h1>{{ title }}</h1>
-<h5><a href="{{ parent:url }}">{{ parent.title }} <small>({{ parent.date_input format="D, Y-m-d" }}, {{ parent:starting_time }}{{ if parent:ending_time }}-{{ parent:ending_time }}{{ /if }})</small></a></h5>
+<h5><a href="{{ parent:url }}">{{ parent:title }} <small>({{ parent:parent:date format="D, Y-m-d" }}, {{ parent:starting_time }}{{ if parent:ending_time }}-{{ parent:ending_time }}{{ /if }})</small></a></h5>
 <ul class="list-group list-group-flush mt-3">
     <li class="list-group-item"><strong class="me-1">Speakers:</strong>
         {{ if speakers }}
