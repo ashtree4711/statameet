@@ -10,3 +10,4 @@ date_behavior:
   future: private
 structure:
   root: false
+  max_depth: 3

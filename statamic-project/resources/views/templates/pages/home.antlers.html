@@ -13,7 +13,7 @@
     <ul class="list-group list-group-flush border border-primary rounded-3">
         {{ nav:events }}
         <li class="list-group-item d-flex flex-column" href="{{ url }}">
-            <h4 class="text-center">{{ date format="l, Y-m-d" }}</h4>
+            <h4 class="text-center">{{ date_day format="l, Y-m-d" }}</h4>
             <div class="accordion accordion-flush" id="accordion{{ title }}">
                 {{ children }}
                 <div class="accordion-item">

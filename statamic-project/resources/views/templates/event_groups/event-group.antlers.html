@@ -9,7 +9,7 @@
         <i>not set yet</i>
         {{ /if }}
     </li>
-    <li class="list-group-item d-flex flex-row"><strong class="me-1">Date:</strong><span>{{ parent:date format="D, Y-m-d" }}</span></li>
+    <li class="list-group-item d-flex flex-row"><strong class="me-1">Date:</strong><span>{{ parent:date_day format="D, Y-m-d" }}</span></li>
     <li class="list-group-item d-flex flex-row"><strong class="me-1">Time:</strong><span>{{ starting_time }}{{ if ending_time }}-{{ ending_time }}{{ /if }}</span></li>
     {{ if location }}
     <li class="list-group-item d-flex flex-row"><strong class="me-1">Location:</strong><span>{{ location }}</span></li>
