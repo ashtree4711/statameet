@@ -35,7 +35,7 @@
                             <ul class="list-group list-group-flush">
                                 {{ event_fields }}
                                 <a href="{{ url }}" class="list-group-item list-group-item-action d-flex flex-column">
-                                    <span>{{ title }}</span>
+                                    <span>{{ title }}<sup class="ms-1"><span>{{ starting_time }}{{ if ending_time }}-{{ ending_time }}{{ /if }}</span></sup></span>
                                     <small>
                                         {{ if speakers }}
                                         {{ speakers }}
@@ -43,9 +43,9 @@
                                         {{ /speakers }}
                                         {{ else }}
                                         <i>not set yet</i>
-                                        {{ /if }}</small>
+                                        {{ /if }}
+                                    </small>
                                 </a>
-
                                 {{ /event_fields }}
                             </ul>
 

@@ -16,7 +16,7 @@
                                     <h2 class="accordion-header" id="heading{{ slug }}">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ slug }}" aria-expanded="false" aria-controls="flush-collapseOne">
                                             <div class="d-flex flex-column">
-                                                <h5>{{ title }}</h5>
+                                                <h5><span>{{ title }}<sup class="ms-1"><span>{{ starting_time }}{{ if ending_time }}-{{ ending_time }}{{ /if }}</span></sup></span></h5>
                                                 {{ if moderation }}
                                                 <small>
                                                     <span>Moderation: </span>
